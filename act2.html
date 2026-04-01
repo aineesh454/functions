@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator using Javascript Function</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: rgb(255, 255, 255);
+        }
+
+        .containter {
+            width: 300px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: lightblue;
+            box-shadow: 0 0 10px #ccc;
+        }
+
+        input,
+        select,
+        button {
+            width: 80%;
+            padding: 8px;
+            margin: 8px 0;
+        }
+
+        button {
+            background-color: navy;
+            color: white;
+        }
+
+        #result {
+            font-weight: bold;
+            color: green;
+            margin-top: 10px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <form action="" class="container">
+        <h3>Calculator</h3>
+        <div>
+            <label for="">Enter First Number</label>
+            <input type="text" name="" id="num1">
+
+            <label for="">Enter second Number</label>
+            <input type="text" name="" id="num2">
+        </div>
+        <select name="" id="operator">
+            <option value="+">Addition</option>
+            <option value="-">Subsraction</option>
+            <option value="*">Mutilication</option>
+            <option value="/">division</option>
+        </select>
+        <button onclick="calculate(event)">calculate</button>
+        <div>
+            <p id="result"></p>
+        </div>
+
+    </form>
+    <script>
+        function calculate(event) {
+            event.preventDefult();
+            let num1 = document.getElementById("num1").value;
+            let num2 = document.getElementById("num2").value;
+            let operator = document.getElementById("operator").value;
+
+            num1 = parseFloat(num1)
+            num2 = parseFloat(num2)
+
+            if (operator == "+") {
+                document.getElementById("result").innerHTML = num1 + num2;
+            }
+            else if (operator == "-") {
+                document.getElementById("result").innerHTML = num1 - num2;
+            }
+            else if (operator == "*") {
+                document.getElementById("result").innerHTML = num1 * num2;
+            }
+            else if (operator == "/") {
+                document.getElementById("result").innerHTML = num1 / num2;
+            }
+        }
+
+    </script>
+</body>
+
+</html>
